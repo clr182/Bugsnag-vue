@@ -31,12 +31,13 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+import Bugsnag from '@bugsnag/js'
+export default { 
+
+ created(){
+  Bugsnag.notify(new Error('Test error helloworld'));
+ },
+ }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
